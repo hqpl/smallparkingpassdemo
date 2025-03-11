@@ -1,0 +1,46 @@
+@host = http://192.168.0.3:8080
+@username = Mat@Hackathon
+@password = password
+@carId = 67cde85baa05e02849d03853
+
+@header_hackathon = X-HACKATHON: authenticated
+
+### Get List of Cars filtered by email
+GET {{host}}/api/20250227/car
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}
+
+### Add new Car
+POST {{host}}/api/20250227/car
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}
+content-type: application/json
+
+{
+  "manufacturer": "Mazda",
+  "plates": "CB502KK",
+  "creationDate": "2025-03-09T09:38:37.539709252",
+  "demised": false,
+  "active": true,
+  "carLog": [
+    {
+      "action": "Created by Mat@Hackthon.",
+      "timestamp": "2025-03-09T10:42:25.057938726"
+    }
+  ]
+}
+
+### Update Car's isActive status by ID to false
+PATCH {{host}}/api/20250227/car/{{carId}}/deactivate
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}
+
+### Update Car's isActive status by ID to true
+PATCH {{host}}/api/20250227/car/{{carId}}/activate
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}
+
+### Update Car's demised status by ID
+PATCH {{host}}/api/20250227/car/{{carId}}/demise
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}

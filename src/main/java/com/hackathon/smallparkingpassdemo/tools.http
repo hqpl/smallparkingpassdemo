@@ -1,0 +1,4 @@
+@host = http://192.168.0.3:8080
+
+GET {{host}}/actuator/health
+X-ACTUATOR-ROBOT: CHECK

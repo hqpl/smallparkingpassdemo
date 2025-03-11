@@ -1,0 +1,15 @@
+@host = http://192.168.0.3:8080
+@username = Mat@Hackathon
+@password = password
+@carId = 67cde85baa05e02849d03853
+
+@header_hackathon = X-HACKATHON: authenticated
+
+### Authenticate API first call
+POST {{host}}/api/token/authenticate
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}
+
+{
+  "entity": "Mateusz"
+}

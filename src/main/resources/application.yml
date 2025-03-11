@@ -1,0 +1,22 @@
+spring:
+    application:
+        name: smallparkingpassdemo
+
+    data:
+        mongodb:
+            uri: mongodb://192.168.0.206:27017
+            database: smallparkingcard
+            # username: your_username
+            # password: your_password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+parking-pass:
+  creation:
+    days-valid: 180 # for how many days new card it valid
+  notification:
+    days-ahead: 30 # how many days to expiration for notification
