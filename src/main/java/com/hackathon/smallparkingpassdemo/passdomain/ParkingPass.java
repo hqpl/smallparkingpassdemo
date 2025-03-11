@@ -26,9 +26,9 @@ public class ParkingPass {
 
     private boolean isActive;
 
-    public ParkingPass(int expiresInDays) {
+    public ParkingPass() {
         this.creationDate = LocalDateTime.now();
-        this.expirationDate = LocalDateTime.now().plusDays(expiresInDays);
+        this.expirationDate = LocalDateTime.now().plusDays(180);
         this.isActive = true;
     }
 
