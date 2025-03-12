@@ -32,7 +32,7 @@ public class ParkingPass {
         this.isActive = true;
     }
 
-    public boolean isExpired() {
-        return LocalDateTime.now().isAfter(this.expirationDate);
+    public boolean isNotExpired() {
+        return LocalDateTime.now().isBefore(this.expirationDate);
     }
 }
