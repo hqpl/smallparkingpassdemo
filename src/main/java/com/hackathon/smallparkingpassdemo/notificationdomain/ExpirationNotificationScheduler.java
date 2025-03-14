@@ -19,7 +19,7 @@ public class ExpirationNotificationScheduler {
         this.notificationService = notificationService;
     }
 
-    @Scheduled(cron = "* * 10 * * *") // Runs every day at 10:00 local time
+    @Scheduled(cron = "0 0 10 * * *") // Runs every day at 10:00 local time
     public void checkExpirations() {
         System.out.println("CRON: checking for expiring parking passes.");
         // Get list of Parking Passes that Expiration Date is within given parameter
