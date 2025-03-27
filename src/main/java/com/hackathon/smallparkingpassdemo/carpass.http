@@ -1,0 +1,11 @@
+@host = http://192.168.0.3:8080
+@username = Mat@Hackathon
+@password = password
+@carId = 67cde85baa05e02849d03853
+
+@header_hackathon = X-HACKATHON: authenticated
+
+### Get List of Cars filtered by email
+GET {{host}}/api/20250327/carpass
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}

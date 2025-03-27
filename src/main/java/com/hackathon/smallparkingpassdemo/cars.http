@@ -17,15 +17,15 @@ Authorization: Basic {{username}}:{{password}}
 content-type: application/json
 
 {
-  "manufacturer": "Mazda",
-  "plates": "CB502KK",
-  "creationDate": "2025-03-09T09:38:37.539709252",
-  "demised": false,
+  "manufacturer": "Honda",
+  "plates": "P 290",
+  "creationDate": "2025-03-14T10:38:37.539709252",
+  "notDemised": true,
   "active": true,
   "carLog": [
     {
       "action": "Created by Mat@Hackthon.",
-      "timestamp": "2025-03-09T10:42:25.057938726"
+      "timestamp": "2025-03-14T10:38:37.539709252"
     }
   ]
 }

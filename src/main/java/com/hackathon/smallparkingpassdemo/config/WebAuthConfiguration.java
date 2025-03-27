@@ -31,8 +31,9 @@ public class WebAuthConfiguration {
             .requestMatchers(HttpMethod.GET, "/api/20250227/car").hasAnyRole("PL_PARKINGCARD_USER")
             .requestMatchers(HttpMethod.POST, "/api/20250227/car").hasAnyRole("PL_PARKINGCARD_USER")
             .requestMatchers(HttpMethod.PATCH, "/api/20250227/car/**").hasAnyRole("PL_PARKINGCARD_USER")
-            .requestMatchers(HttpMethod.GET, "/api/20250227/pass").hasAnyRole("PL_PARKINGCARD_USER")
+            .requestMatchers(HttpMethod.GET, "/api/20250227/pass/**").hasAnyRole("PL_PARKINGCARD_USER")
             .requestMatchers(HttpMethod.POST, "/api/20250227/pass/generate/**").hasAnyRole("PL_PARKINGCARD_USER")
+            .requestMatchers(HttpMethod.GET, "/api/20250327/carpass").hasAnyRole("PL_PARKINGCARD_USER")
             .anyRequest().denyAll());
 
         http.addFilterBefore(new HeaderFilter(), AuthorizationFilter.class);

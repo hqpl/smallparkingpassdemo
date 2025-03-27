@@ -3,15 +3,19 @@ package com.hackathon.smallparkingpassdemo.cardomain;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CarService {
 
     private final CarRepository carRepository;
+    private final ModelMapper modelMapper;
+    
 
-    public CarService(CarRepository carRepository) {
+    public CarService(CarRepository carRepository, ModelMapper modelMapper) {
         this.carRepository = carRepository;
+        this.modelMapper = modelMapper;
     }
 
 
@@ -63,5 +67,11 @@ public class CarService {
         }
         return false;
     }
+
+
+    public CarPassResponseDTO getCarPassResponseDTO(Car car) {
+        return modelMapper.map(car, CarPassResponseDTO.class);
+    }
+
 
 }

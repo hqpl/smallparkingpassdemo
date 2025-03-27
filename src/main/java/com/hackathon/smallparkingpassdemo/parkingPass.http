@@ -6,7 +6,7 @@
 @header_hackathon = X-HACKATHON: authenticated
 
 ### Authenticate API first call
-GET {{host}}/api/20250227/pass
+GET {{host}}/api/20250227/pass/67cde85baa05e02849d03853
 Authorization: Basic {{username}}:{{password}}
 {{header_hackathon}}
 

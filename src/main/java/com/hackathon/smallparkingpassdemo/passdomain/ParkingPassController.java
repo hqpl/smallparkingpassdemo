@@ -40,13 +40,16 @@ public class ParkingPassController {
         return ResponseEntity.ok(newParkingPass);
     }
 
-    @GetMapping() // Get all parking cards of given user email
-    public List<ParkingPass> getMethodName() {
+    @GetMapping("{carId}") // Get parking cards of given carId
+    public ResponseEntity<List<ParkingPass>> getMethodName(@PathVariable String carId) {
         String ownerEmail = userUtils.getEmail();
         if (ownerEmail.isBlank()) {
-            return null;
+            return ResponseEntity.badRequest().build();
         }
-        return parkingPassService.getParkingPasses(ownerEmail);
+
+        List<ParkingPass> parkingPasses = parkingPassService.getParkingPassesByCarIdPageable(carId).get();
+        
+        return parkingPasses != null ? ResponseEntity.ok(parkingPasses) : ResponseEntity.noContent().build();
     }
     
 }

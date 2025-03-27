@@ -2,6 +2,7 @@ package com.hackathon.smallparkingpassdemo.passdomain;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -53,9 +54,15 @@ public class ParkingPassService {
         return newParkingPass;
     }
 
-    public List<ParkingPass> getParkingPasses(String ownerEmail) {
-        // Get Car details filtered by email and pull passes for those cars
-        List<ParkingPass> parkingPasses = parkingPassRepository.findAll();
+    public Optional<List<ParkingPass>> getParkingPassesByCarIdPageable(String carId) {
+        // Get Card details filtered by carId
+        Optional<List<ParkingPass>> parkingPasses = parkingPassRepository.findTop5ByCarIdOrderByCreationDateDesc(carId);
+        return parkingPasses;
+    }
+
+    public Optional<ParkingPass> getOneParkingPassByCarIdLatest(String carId) {
+        // Get Card details filtered by carId
+        Optional<ParkingPass> parkingPasses = parkingPassRepository.findFirstByCarIdOrderByCreationDateDesc(carId);
         return parkingPasses;
     }
 
