@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -48,7 +49,7 @@ public class Car {
 
     public void addLogEntry (String message) {
         if (this.carLog == null) {
-            this.carLog = List.of();
+            this.carLog = new ArrayList<>();
             throw new NoSuchElementException("List is empty when it should contain at least 1 element - Created.");
         }
         this.carLog.add(new LogEntry(message));
