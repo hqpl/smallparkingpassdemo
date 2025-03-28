@@ -1,4 +1,9 @@
 @host = http://192.168.0.3:8080
 
+### ealth endpoint
 GET {{host}}/actuator/health
+X-ACTUATOR-ROBOT: CHECK
+
+### Info endpoint
+GET {{host}}/actuator/info
 X-ACTUATOR-ROBOT: CHECK

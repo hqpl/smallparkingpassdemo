@@ -27,6 +27,7 @@ public class WebAuthConfiguration {
 
         http.authorizeHttpRequests(r -> r
             .requestMatchers(HttpMethod.GET, "/actuator/health").permitAll()
+            .requestMatchers(HttpMethod.GET, "/actuator/info").permitAll()
             .requestMatchers(HttpMethod.POST, "/api/token/authenticate").hasAnyRole("PL_PARKINGCARD_USER")
             .requestMatchers(HttpMethod.GET, "/api/20250227/car").hasAnyRole("PL_PARKINGCARD_USER")
             .requestMatchers(HttpMethod.POST, "/api/20250227/car").hasAnyRole("PL_PARKINGCARD_USER")

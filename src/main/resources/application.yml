@@ -10,13 +10,30 @@ spring:
             # password: your_password
 
 management:
+  health:
+    mongo:
+      enabled: true
+  info:
+    env:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
   endpoints:
     web:
       exposure:
-        include: health
+        include: health, info
 
 parking-pass:
   creation:
     days-valid: 180 # for how many days new card it valid
   notification:
     days-ahead: 30 # how many days to expiration for notification
+
+info:
+  app:
+    name: Small Parking Pass Demo
+    description: Application that manages employee cards and parking cards
+    version: 0.0.2
+  java:
+    version: ${java.version}
