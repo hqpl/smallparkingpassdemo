@@ -1,4 +1,4 @@
-# Hackathon 2025 - Parkign card manager
+# Hackathon 2025 - Parking card manager
 
 ## This is demo application to manage parking cards for employee cars. The aim is to deliver simple and cost effective solution. 
 
