@@ -5,13 +5,13 @@
 
 @header_hackathon = X-HACKATHON: authenticated
 
-### Authenticate API first call
+### Get pass for given carId
 GET {{host}}/api/20250227/pass/67cde85baa05e02849d03853
 Authorization: Basic {{username}}:{{password}}
 {{header_hackathon}}
 
 
-### Authenticate API first call
+### Generate new pass for given CarId
 POST {{host}}/api/20250227/pass/generate/67cde85baa05e02849d03853
 Authorization: Basic {{username}}:{{password}}
 {{header_hackathon}}
