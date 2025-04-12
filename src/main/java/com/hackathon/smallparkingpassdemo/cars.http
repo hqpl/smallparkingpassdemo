@@ -30,6 +30,17 @@ content-type: application/json
   ]
 }
 
+### Add new simple Car
+POST {{host}}/api/20250227/car
+Authorization: Basic {{username}}:{{password}}
+{{header_hackathon}}
+content-type: application/json
+
+{
+  "manufacturer": "Opel",
+  "plates": "KW78978"
+}
+
 ### Update Car's isActive status by ID to false
 PATCH {{host}}/api/20250227/car/{{carId}}/deactivate
 Authorization: Basic {{username}}:{{password}}
